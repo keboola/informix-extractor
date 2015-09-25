@@ -5,7 +5,7 @@
  * Time: 14:21
  */
 
-namespace Keboola\DbExtractorBundle\Exception;
+namespace Keboola\InformixExtractor\Exception;
 
 class DbException extends \Exception
 {

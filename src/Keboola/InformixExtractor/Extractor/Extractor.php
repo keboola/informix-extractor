@@ -8,7 +8,7 @@
 namespace Keboola\InformixExtractor\Extractor;
 
 use Keboola\Csv\CsvFile;
-use Keboola\DbExtractorBundle\Exception\DbException;
+use Keboola\InformixExtractor\Exception\DbException;
 use Symfony\Component\Yaml\Yaml;
 
 class Extractor
