@@ -80,7 +80,7 @@ class Extractor
             }
         }
 
-        $dbLocale = isset($dbParams['locale']) ? $dbParams['locale'] : 'en_US.819';
+        $dbLocale = isset($dbParams['locale']) ? $dbParams['locale'] : 'en_US.UTF8';
         $clientLocale = isset($dbParams['client_locale']) ? $dbParams['client_locale'] : 'en_US.UTF8';
 
         $informixDsn = "informix:host=%s; service=%s; database=%s; server=%s; client_locale=%s; db_locale=%s; protocol=onsoctcp; EnableScrollableCursors=1";
