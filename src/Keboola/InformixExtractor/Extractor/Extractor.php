@@ -74,13 +74,12 @@ class Extractor
     public function createConnection($dbParams)
     {
         // check params
-        foreach (['host', 'database', 'user', 'password'] as $r) {
+        foreach (['host', 'port', 'database', 'user', 'password'] as $r) {
             if (!isset($dbParams[$r])) {
                 throw new DbException(sprintf("Parameter %s is missing.", $r));
             }
         }
 
-        $port = isset($dbParams['port']) ? $dbParams['port'] : '3306';
         $dbLocale = isset($dbParams['locale']) ? $dbParams['locale'] : 'en_US.819';
         $clientLocale = isset($dbParams['client_locale']) ? $dbParams['client_locale'] : 'en_US.UTF8';
 
@@ -88,7 +87,7 @@ class Extractor
 
         $dsn = sprintf(
             $informixDsn,
-            $dbParams['host'], $dbParams['port'], $dbParams['database'], $dbParams['server'], $port, $clientLocale, $dbLocale
+            $dbParams['host'], $dbParams['port'], $dbParams['database'], $dbParams['server'], $clientLocale, $dbLocale
         );
 
         $pdo = new \PDO($dsn, $dbParams['user'], $dbParams['password']);
