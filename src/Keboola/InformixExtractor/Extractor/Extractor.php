@@ -81,12 +81,13 @@ class Extractor
         }
 
         $port = isset($dbParams['port']) ? $dbParams['port'] : '3306';
+        $dbLocale = isset($dbParams['locale']) ? $dbParams['locale'] : 'en_US.819';
 
-        $informixDsn = "informix:host=%s; service=%s; database=%s; server=%s; protocol=onsoctcp; EnableScrollableCursors=1";
+        $informixDsn = "informix:host=%s; service=%s; database=%s; server=%s; client_locale=en_us.utf8; db_locale=%s; protocol=onsoctcp; EnableScrollableCursors=1";
 
         $dsn = sprintf(
             $informixDsn,
-            $dbParams['host'], $dbParams['port'], $dbParams['database'], $dbParams['server'], $port
+            $dbParams['host'], $dbParams['port'], $dbParams['database'], $dbParams['server'], $port, $dbLocale
         );
 
         $pdo = new \PDO($dsn, $dbParams['user'], $dbParams['password']);
