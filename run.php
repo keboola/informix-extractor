@@ -1,6 +1,6 @@
 <?php
 
-use Keboola\DbExtractorBundle\Exception\DbException;
+use Keboola\InformixExtractor\Exception\DbException;
 use Keboola\InformixExtractor\Extractor\Extractor;
 use Symfony\Component\Yaml\Yaml;
 
